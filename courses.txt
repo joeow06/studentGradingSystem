@@ -1,0 +1,9 @@
+CSC1010,Introduction to Programming
+CSC1020,Data Structures
+CSC1030,Database Systems
+CSC1040,Operating Systems
+CSC1050,Computer Networks
+bcd1234,iejfeoijfoe jfoiejfo
+CDC5678,DATA STRUCTURES
+tay6767,GOOD OJB
+DYC6767,Dyc course
