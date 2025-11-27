@@ -470,8 +470,7 @@ def main():
             case '6':
                 export()
             case '0':
-                print("Exiting program...")
-                print("--------------------")
+                print(RED + "Exiting program..." + RESET)
                 break
             case _ :
                 print("Invalid option!")
