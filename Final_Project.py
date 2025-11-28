@@ -475,6 +475,5 @@ def main():
             case _ :
                 print("Invalid option!")
 
-
-if __name__ == "__main__":
-    main()
+# Program starts here
+main()
