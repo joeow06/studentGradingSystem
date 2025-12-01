@@ -47,7 +47,7 @@ def add_course():
     print(BLUE + "\n****** Adding new course ******" + RESET)
     info = []
     while True:
-        userInput = input("Enter Course ID: ")
+        userInput = input("Enter Course ID: ").upper()
         courses=load_courses()
         # To prevent the user from duplicate the course id
         if userInput in courses:
@@ -59,7 +59,7 @@ def add_course():
         else:
             print(RED + "Error" + RESET + ": Invalid format")
     while True:
-        userInput = input("Enter Course Name: ")
+        userInput = input("Enter Course Name: ").upper()
         if userInput in courses.values():
             print(RED + "Error" + RESET + ": This course name has been recorded")
             continue
@@ -331,7 +331,7 @@ def display_individual(flag):
 
             f.write("COURSE RESULTS\n")
             f.write("----------------------------------------------------\n")
-            f.write("| Course Name                  | Marks | Grade     |\n")
+            f.write("| Course Name             | Marks | Grade          |\n")
             f.write("----------------------------------------------------\n")
 
             if userInput in student_grades:
