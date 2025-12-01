@@ -396,7 +396,7 @@ def display_course(flag):
             f.write("----------------------------------------\n")
             i = 1
             for x in students_list:
-                f.write(f"| {str(i).ljust(2)} | {x.split(" - ")[0].ljust(10)} | {x.split(" - ")[1].ljust(18)} |\n")
+                f.write(f"| {str(i).ljust(2)} | {x.split(' - ')[0].ljust(10)} | {x.split(' - ')[1].ljust(18)} |\n")
                 i += 1
             f.write("----------------------------------------\n\n")
 
