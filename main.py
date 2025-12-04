@@ -472,7 +472,7 @@ def main():
                 print(RED + "Exiting program..." + RESET)
                 break
             case _ :
-                print("Invalid option!")
+                print(RED + "Error" + RESET + ": Invalid option!")
 
 # Program starts here
 main()
