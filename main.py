@@ -124,12 +124,17 @@ def record():
     info = []
     students = load_students()
     student_grades = load_grades()
+    courses = load_courses()
     # Initialize change for later use (to overwrite the marks)
     change = 0
 
     if not students:
         # if there is no recorded student, stop function early
         print(RED + "Error" + RESET + ": No student found. Please add a student first.")
+        return
+    if not courses:
+        # if there is no recorded course, stop function early
+        print(RED + "Error" + RESET + ": No course found. Please add a course first.")
         return
     print("Available students:")
     for student_id, name in students.items():
@@ -144,11 +149,6 @@ def record():
         else:
             print(RED + "Error" + RESET + ": Student not found")
             continue
-    courses = load_courses()
-    if not courses:
-        # if there is no recorded course, stop function early
-        print(RED + "Error" + RESET + ": No course found. Please add a course first.")
-        return
     records = check_grades()
     student_id = info[0]
     # The line to prevent error if no student ID recorded yet
