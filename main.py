@@ -40,7 +40,7 @@ def add_student():
     with open("students.txt", "a") as a:
         a.write(studentLine)
         a.write("\n")
-    print(GREEN + "****** Action Succesful ******" + RESET)
+    print(GREEN + "****** Action Successful ******" + RESET)
 
 #function to add a new course
 def add_course():
@@ -71,7 +71,7 @@ def add_course():
     with open("courses.txt", "a") as a:
         a.write(courseLine)
         a.write("\n")
-    print(GREEN + "****** Action Succesful ******" + RESET)
+    print(GREEN + "****** Action Successful ******" + RESET)
 
 # funciton to return recorded students in dict form
 def load_students():
@@ -269,7 +269,7 @@ def record():
         with open("grades.txt", "a") as g:
             g.write(gradeLine)
             g.write("\n")
-    print(GREEN + "****** Action Succesful ******" + RESET)
+    print(GREEN + "****** Action Successful ******" + RESET)
 
 def load_grades():
     student_grades = {}
@@ -295,7 +295,7 @@ def display_individual(flag):
         print(BLUE + "\n****** Display Student Performance ******" + RESET)
     student_grades = load_grades()
     if not student_grades:
-        print(RED + "Error" + RESET + ": No grades record found. Add a record first.")
+        print(RED + "Error" + RESET + ": No grades record available.")
         return
     students=load_students()
     print("Available students:")
@@ -345,7 +345,7 @@ def display_individual(flag):
 
             f.write("----------------------------------------------------\n")
 
-    print(GREEN + "****** Action Succesful ******" + RESET)
+    print(GREEN + "****** Action Successful ******" + RESET)
 
 def display_course(flag):
     if not flag:
@@ -372,7 +372,9 @@ def display_course(flag):
             grade, mark = course_dict[target_course]
             marks_list.append(float(mark))
             students_list.append(student_id + " - " + students[student_id])
-
+    if not marks_list:
+        print(RED + "Error" + RESET + ": No grades record available.")
+        return
     average = sum(marks_list) / len(marks_list)
     if not flag:
         print(f"\n==== {target_course} ====")
