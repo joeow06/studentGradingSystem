@@ -329,21 +329,21 @@ def display_individual(flag):
             f.write(f"Student ID : {userInput}\nName       : {students[userInput]}\n\n")
 
             f.write("COURSE RESULTS\n")
-            f.write("----------------------------------------------------\n")
-            f.write("| Course Name             | Marks | Grade          |\n")
-            f.write("----------------------------------------------------\n")
+            f.write("--------------------------------------------------------\n")
+            f.write("| Course Name                 | Marks | Grade          |\n")
+            f.write("--------------------------------------------------------\n")
 
             if userInput in student_grades:
                 for course_name, (grade, marks) in student_grades[userInput].items():
                     f.write(
                         f"| {course_name.ljust(28)}"
                         f"| {str(marks).ljust(6)}"
-                        f"| {grade.ljust(11)}|\n"
+                        f"| {grade.ljust(15)}|\n"
                     )
             else:
-                f.write("| No course records found                          |\n")
+                f.write("| No course records found                              |\n")
 
-            f.write("----------------------------------------------------\n")
+            f.write("--------------------------------------------------------\n")
 
     print(GREEN + "****** Action Successful ******" + RESET)
 
@@ -425,6 +425,31 @@ def export():
         case _ :
             print(RED + "Error" + RESET + ": Invalid input")
 
+def clear():
+    print(BLUE + "\n****** Clearing ******" + RESET)
+    print("[1]   students.txt")
+    print("[2]   grades.txt")
+    print("[3]   courses.txt")
+    choice = input("Choose a file to clear: ")
+    match choice:
+        case '1':
+            print("Clearing students.txt ...")
+            with open("students.txt", "w") as _:
+                pass
+        case '2':
+            print("Clearing grades.txt ...")
+            with open("grades.txt", "w") as _:
+                pass
+        case '3':
+            print("Clearing courses.txt ...")
+            with open("courses.txt", "w") as _:
+                pass
+        case _ :
+            print(RED + "Error" + RESET + ": Invalid option!")
+            return
+    print(GREEN + "****** Action Successful ******" + RESET)
+
+
 #function to show the options
 def print_option():
     print("\n[1]   Add a new student")
@@ -433,6 +458,7 @@ def print_option():
     print("[4]   Display individual student performance")
     print("[5]   Display course performance summary")
     print("[6]   Export performance report")
+    print("[7]   Clear data")
     print("[0]   Exit")
 
 
@@ -470,6 +496,8 @@ def main():
                 display_course(False)
             case '6':
                 export()
+            case '7':
+                clear()
             case '0':
                 print(RED + "Exiting program..." + RESET)
                 break
