@@ -62,6 +62,7 @@ def add_course():
         userInput = input("Enter Course Name: ").upper()
         if userInput in courses.values():
             print(RED + "Error" + RESET + ": This course name has been recorded")
+            continue
         if any(i.isdigit() for i in userInput):
             print(RED + "Error" + RESET + ": No numbers allowed")
             continue
