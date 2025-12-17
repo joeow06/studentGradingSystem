@@ -299,6 +299,9 @@ def display_individual(flag):
         print(RED + "Error" + RESET + ": No grades record available.")
         return
     students=load_students()
+    if not students:
+        print(RED + "Error" + RESET + ": No students available.")
+        return
     print("Available students:")
     for student_id, name in students.items():
         print(f"{student_id} - {name}")
@@ -357,6 +360,12 @@ def display_course(flag):
     marks_list = []
     students_list = []
 
+    if not courses:
+        print(RED + "Error" + RESET + ": No courses available.")
+        return
+    if not students:
+        print(RED + "Error" + RESET + ": No students available.")
+        return
     print("Available courses:")
     for course_id, course_name in courses.items():
         print(f"{course_id} - {course_name}")
