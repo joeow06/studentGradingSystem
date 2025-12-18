@@ -101,24 +101,6 @@ def load_courses():
                 courses[course_id] =course_name
     return courses
 
-# function to return only student id and course name in dict form
-def check_grades():
-    records = {}
-    with open("grades.txt", "r") as g:
-        for line in g:
-            parts = line.strip().split(",")
-            if len(parts) >= 2:
-                student_id = parts[0]
-                course_name = parts[1]
-
-                # initialize list if first time
-                if student_id not in records:
-                    records[student_id] = []
-
-                # add course
-                records[student_id].append(course_name)
-    return records
-
 #function to record the results
 def record():
     print(BLUE + "\n****** Recording marks ******" + RESET)
@@ -150,7 +132,7 @@ def record():
         else:
             print(RED + "Error" + RESET + ": Student not found")
             continue
-    records = check_grades()
+    records = {sid: list(courses.keys()) for sid, courses in student_grades.items()}
     student_id = info[0]
     # The line to prevent error if no student ID recorded yet
     if student_id in records:
