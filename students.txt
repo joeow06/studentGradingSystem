@@ -1,3 +1,3 @@
-24242424,John Collin,24242424@imail.sunway.edu.my
-12345678,Randy Soon,12345678@imail.sunway.edu.my
-00000000,Jack Sparrow,00000000@imail.sunway.edu.my
+12345678,JOE,joe@imail.sunway.edu.my
+22334455,IVAN,ivan@imail.sunway.edu.my
+87654321,QIWEN,qiwen@imail.sunway.edu.my
